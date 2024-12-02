@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/* input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+} */
+
+.content{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.program{
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid black;
+}
+.program__header{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    background: rebeccapurple;
+}
+.header--wrapper{
+    position: absolute;
+    top:35px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* background: green; */
+}
+.search{
+    overflow: hidden;
+    border-radius: 2em;
+    background: white;
+}
+.search--wrapper{
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+}
+.search--icon{
+    padding: 0.5em;
+    cursor: pointer;
+    /* background: green; */
+}
+.search--icon i{
+    display: block;
+}
+.search--input{
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+.search--input::placeholder{
+    font-size: 0.9rem;
+}
+.search__related{
+    display: none;
+    padding: 0.5em 1em 1em;
+}
+.related--li{
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+.related--li:hover{
+    text-decoration: underline;
+}
+
+.box-types{
+    width: 100px;
+    position: relative;
+    background: yellow;
+    /* overflow: hidden; */
+}
+.box-types__header{
+    position: relative;
+    z-index: 100;
+    padding:0.5em;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    /* background: red; */
+}
+.box-types--text{
+
+}
+.box-types--icon{
+
+}
+.box-types__list{
+    width: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+.list-display{
+    display: flex;
+}
+.box-types__list--type{
+    margin: 0.5em 0;
+    color: black;
+    cursor: pointer;
+}
+.box-types__list--type:hover{
+    text-decoration: underline;
+}
+
+.cards{
+    padding: 1em;
+    background: rgb(243, 243, 1);
+}
+.cards_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+.cards__card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    cursor: pointer;
+    /* background: white; */
+    background: rebeccapurple;
+}
+.card__header{
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    /* background: green; */
+}
+.card__header--number{
+    width: 35px;
+    height: 35px;
+    margin-right: 0.8em;
+    color: black;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    background: yellow;
+
+}
+.card__header--name{
+    color: white;
+}
+.card__img{
+    width: 90%;
+    height: 200px;
+    margin: 0.5em auto;
+    /* background: lightblue; */
+}
+.card__img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.card__types{
+    height: 45px;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    /* background: green; */
+}
+.card__type--img{
+    /* width: 50px; */
+    color: black;
+    margin-right: 0.5em;
+    padding: 0.25em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: yellow;
+    border-radius: 1em;
+}
+
+.cards__arrows{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+.cards__arrows--left,
+.cards__arrows--right{
+    cursor: pointer;
+    padding: 1em 1.5em;
+    background: rebeccapurple;
+}
+.cards__arrows--right{
+    margin-left: 1em;
+}
+
+/* full info card */
+.glass-view__exit-bt{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+.glass-view__exit-bt i{
+    font-size: 1.5rem;
+}
+.glass-view{
+    z-index: 1000;
+    position: fixed;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    
+    display: none;
+}
+.full-info-card{
+    width: 100%;
+    max-width: 750px;
+    height:60vh;
+    display: grid;
+    grid-template-columns: 250px 2fr;
+    grid-template-areas: 
+    'front stats'
+    'front more-info';
+    border: 1px solid black;
+}
+.full-info-card__front{
+    position: relative;
+    grid-area: front;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rebeccapurple;
+}
+.full-info-card__front--number{
+    width: 50px;
+    height: 50px;
+    color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: yellow;
+}
+.full-info-card__front--name{
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 2em;
+}
+.full-info-card__front--img img{
+    width: 100%;
+    display: block;
+}
+.full-info-card__front--types{
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+.full-info-card__front--type{
+    color: black;
+    margin: 0 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    background: yellow;
+    /* background: green; */
+}
+.full-info-card__stats{
+    color: white;
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    background: rebeccapurple;
+}
+.stats__text{
+    text-align: center;
+    padding: 1em;
+    color: white;
+    font-size: 1.1rem;
+    background: rebeccapurple;
+}
+.stats__table{
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    background: lightseagreen;
+}
+.stats__table--column-1{
+    width: 200px;
+    text-align: left;
+}
+.stats__table--column-2{
+    width: 100%;
+    text-align: center;
+}
+.stats__table--column-1,
+.stats__table--column-2{
+    
+}
+.stats__table--list{
+    padding: 0.5em 0;
+    color: white;
+}
+.stats__others{
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+.stats__others--height,
+.stats__others--weight{
+    padding: 0 1em;
+}
+.full-info-card__more{
+    grid-area: more-info;
+    background: lightseagreen;
+}
+.evolutions{
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.evolutions__pokemon{
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+}
+.evolutions__pokemon--img{
+    width: 50px;
+    height: 50px;
+    margin-right: 0.25em;
+    border-radius: 50%;
+    /* background: violet; */
+    background: yellow;
+}
+.evolutions__pokemon--img img{
+    width: 100%;
+    display: block;
+}
+.evolutions__pokemon--name{
+    padding: 0.25em 0.5em;
+    background: rebeccapurple;
+    border-radius: 1em;
+}
+.evolutions__pokemon--name p{
+    font-size: 0.8rem;
+    color: white;
+}
+
+

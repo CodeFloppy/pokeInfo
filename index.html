@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokeInfo</title>
+    <!-- css style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="content">
+        <div class="program">
+            <div class="program__header header">
+
+                <div class="header--wrapper">
+                    <div class="header__search search">
+                        <div class="search--wrapper">
+                            <div class="search--icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+        
+                            <input type="search" name="" placeholder="write pokemon name" autocomplete="off" class="search--input" id="search">    
+                        </div>
+    
+                        <div class="search__related related" id="related">
+                            <!-- <li class="related--li">pikacho</li>
+                            <li class="related--li">charmader</li>
+                            <li class="related--li">escuero</li>
+                            <li class="related--li">ratata</li>
+                            <li class="related--li">garadow</li> -->
+                        </div>
+                    </div>    
+                
+                
+                    <div class="header__box-types box-types">
+                        <div class="box-types__header" id="typesBt">
+                            <p class="box-types--text" id="typeText">all</p>
+                        
+                            <div class="box-types--icon">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                        </div>
+                    
+                        <div class="box-types__list" id="listType">
+                            <!-- <li class="box-types__list--type">Fire</li>
+                            <li class="box-types__list--type">aqua</li>
+                            <li class="box-types__list--type">grass</li>
+                            <li class="box-types__list--type">ground</li>
+                            <li class="box-types__list--type">lightning</li> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program__cards cards">
+                <div class="cards_wrapper" id="cardsArea">
+                    <!-- <div class="cards__card card">
+                        <div class="card__header">
+                            <div class="card__header--number">1</div>
+                            <div class="card__header--name">pokemon</div>
+                        </div>
+
+                        <div class="card__img">
+                            <img src="" alt="">
+                        </div>
+
+                        <div class="card__types">
+                            <div class="card__type--img"></div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="cards__card">2</div>
+                    <div class="cards__card">3</div>
+                    <div class="cards__card">4</div>
+                    <div class="cards__card">5</div>
+                    <div class="cards__card">6</div>
+                    <div class="cards__card">7</div>
+                    <div class="cards__card">8</div>
+                    <div class="cards__card">9</div> -->
+                </div>
+
+                <div class="cards__arrows">
+                    <div class="cards__arrows--left" id="arrowLeftBt">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="cards__arrows--right" id="arrowRightBt">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- full info card -->
+        <div class="glass-view" id="glassView">
+            <div class="glass-view__exit-bt" id="exitBt">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <div class="full-info-card">
+                <div class="full-info-card__front">
+                    <div class="full-info-card__front--number" id="fullInfoNumber">0</div>
+                    <p class="full-info-card__front--name" id="fullInfoName">name</p>
+                    <div class="full-info-card__front--img" id="fullInfoImg"></div>
+                    <div class="full-info-card__front--types" id="fullInfoTypes">
+                        <!-- <div class="full-info-card__front--type">Agua</div> -->
+                    </div>
+                </div>
+                
+                <div class="full-info-card__stats stats" id="fullInfoStats">
+                    <div class="stats__text">
+                        <p>stats</p>
+                    </div>
+               
+                    <div class="stats__table">
+                        <ul class="stats__table--column-1">
+                            <li class="stats__table--list">hp</li>
+                            <li class="stats__table--list">attack</li>
+                            <li class="stats__table--list">defense</li>
+                            <li class="stats__table--list">special-attack</li>
+                            <li class="stats__table--list">special-defense</li>
+                            <li class="stats__table--list">speed</li>
+                        </ul>
+                        <ul class="stats__table--column-2" id="statsTable">
+                            <li class="stats__table--list">uno</li>
+                            <li class="stats__table--list">uno</li>
+                            <li class="stats__table--list">uno</li>
+                            <li class="stats__table--list">uno</li>
+                            <li class="stats__table--list">uno</li>
+                            <li class="stats__table--list">uno</li>
+                        </ul>
+                    </div>
+
+                    <div class="stats__others">
+                        <div class="stats__others--height" id="statsOtherHeighr">
+                            <p>height :10</p>
+                        </div>
+                        <div class="stats__others--weight" id="statsOtherWeight">
+                            <p>weight :10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-info-card__more" id="fullInfoMore">
+                    <div class="evolutions" id="evolutions">
+                        <!-- <div class="evolutions__pokemon">
+                            <div class="evolutions__pokemon--img"></div>
+                            <div class="evolutions__pokemon--name">
+                                <p>charmeleon</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
